@@ -33,7 +33,7 @@ public class ArraysStack implements Stack {
     @Override
     public void clear() {
 
-        dataStack = new Object[];
+        dataStack = new Object[n];
         top = -1;
 
     }
@@ -41,9 +41,7 @@ public class ArraysStack implements Stack {
     @Override
     public boolean isEmpty() {
 
-        top = Integer.parseInt(null);
-
-        return true;
+        return top==-1;
 
     }
 

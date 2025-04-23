@@ -1,7 +1,6 @@
 package controller;
 
 import domain.ArraysStack;
-import domain.Employee;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;

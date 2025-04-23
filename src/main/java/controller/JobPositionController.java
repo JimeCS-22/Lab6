@@ -1,7 +1,6 @@
 package controller;
 
 import domain.LinkedListStack;
-import domain.JobPosition;
 import domain.StackException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

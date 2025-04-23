@@ -36,9 +36,8 @@ public class LinkedListStack implements Stack {
     @Override
     public boolean isEmpty() {
 
-        top = null;
+        return top==null;
 
-        return true;
     }
 
     @Override
@@ -58,17 +57,10 @@ public class LinkedListStack implements Stack {
 
         Node newNode = new Node(element);
 
-        if(isEmpty()){
+        if(!isEmpty()) newNode.next = top;
 
-            throw new StackException("Satck List is empty");
-
-        } else {
-
-            newNode.next = top;
-            top = newNode;
-            counter++;
-
-        }
+        top = newNode;
+        counter++;
 
     }
 
@@ -90,10 +82,10 @@ public class LinkedListStack implements Stack {
         return result;
     }
 
-    public static boolean isBalanced(String expresion) throws StackException {
+    public static boolean isBalanced(String expression) throws StackException {
         LinkedListStack pila = new LinkedListStack();
 
-        for (char character : expresion.toCharArray()) {
+        for (char character : expression.toCharArray()) {
             if (character == '(' || character == '{' || character == '[') {
                 pila.push(character);
             } else if (character == ')' || character == '}' || character == ']') {
