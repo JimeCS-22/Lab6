@@ -89,4 +89,30 @@ public class LinkedListStack implements Stack {
 
         return result;
     }
+
+    public static boolean isBalanced(String expresion) throws StackException {
+        LinkedListStack pila = new LinkedListStack();
+
+        for (char character : expresion.toCharArray()) {
+            if (character == '(' || character == '{' || character == '[') {
+                pila.push(character);
+            } else if (character == ')' || character == '}' || character == ']') {
+                if (pila.isEmpty()) {
+                    return false;
+                }
+                char top = (char) pila.pop();
+                if (!coinciden(top, character)) {
+                    return false;
+                }
+            }
+        }
+        return pila.isEmpty();
+    }
+
+    private static boolean coinciden(char abre, char cierra) {
+        return (abre == '(' && cierra == ')') ||
+                (abre == '{' && cierra == '}') ||
+                (abre == '[' && cierra == ']');
+    }
+    
 }
