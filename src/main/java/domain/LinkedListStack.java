@@ -106,5 +106,35 @@ public class LinkedListStack implements Stack {
                 (abre == '{' && cierra == '}') ||
                 (abre == '[' && cierra == ']');
     }
+
+    @Override
+    public String toString() {
+
+        if (isEmpty()) return "Linked Stack is Empty";
+
+        String result = "Linked Stack Content:\n";
+
+        try {
+
+            LinkedListStack aux= new LinkedListStack();
+
+            while (!isEmpty()){
+
+                result += peek() + "\n ";
+                aux.push(pop());
+
+            }
+
+            //Deja la pila en su estado original
+            while (!aux.isEmpty()){
+                push(aux.pop());
+            }
+
+        } catch (StackException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return result;
+    }
     
 }

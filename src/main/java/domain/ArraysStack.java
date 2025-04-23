@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Arrays;
+
 public class ArraysStack implements Stack {
 
     private int n ; //The maximum stack size
@@ -87,11 +89,40 @@ public class ArraysStack implements Stack {
 
         if (isEmpty()){
 
-            throw new StackException("Satck List is empty");
+            throw new StackException("Stack List is empty");
 
         }
 
         return dataStack[top--];
 
+    }
+
+    @Override
+    public String toString() {
+
+        if (isEmpty()) return "Array Stack is Empty";
+
+        String result = "Array Stack Content:\n";
+
+        try {
+
+            ArraysStack aux= new ArraysStack(size());
+
+            while (!isEmpty()){
+
+                result += peek() + "\n ";
+                aux.push(pop());
+
+            }
+            //Deja la pila en su estado original
+            while (!aux.isEmpty()){
+              push(aux.pop());
+            }
+
+        } catch (StackException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return result;
     }
 }
