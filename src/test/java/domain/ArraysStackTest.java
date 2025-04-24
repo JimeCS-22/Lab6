@@ -8,10 +8,17 @@ class ArraysStackTest {
 
     @Test
     void test() {
-
         ArraysStack arraysStack = new ArraysStack(11);
-
         try {
+//            for(int i = 0; i < 10; i++){
+//                int value = util.Utility.random(30);
+//                System.out.println("Value ["+ value+"] pushed");
+//                arraysStack.push(value);
+//            }
+//            System.out.println(arraysStack);
+//
+//            System.out.println(arraysStack);
+
             //Testeo con los nombres
             System.out.println("Test for arrayStack with names");
             arraysStack.push(new Person(1 , "Alanna" , 18));
@@ -28,11 +35,9 @@ class ArraysStackTest {
 
             System.out.println(arraysStack);
 
-
-
-
-        } catch (StackException ex){
+        }catch (StackException ex){
             System.out.println(ex.getMessage());
         }
+
     }
 }

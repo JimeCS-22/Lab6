@@ -3,7 +3,7 @@ package domain;
 public class Person {
 
     private int id;
-    private String name ;
+    private String name;
     private int age;
 
     public Person(int id, String name, int age) {
