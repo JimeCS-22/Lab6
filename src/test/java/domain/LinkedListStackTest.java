@@ -23,13 +23,13 @@ class LinkedListStackTest {
             System.out.println(linkedStack);//llamo de nuevo al toString
 
             System.out.println("Is Balanced Test");
-            System.out.println(isBalanced("({[]})"));
-            System.out.println(isBalanced("([])") );
-            System.out.println(isBalanced("([)]"));
-            System.out.println(isBalanced("((()))"));
-            System.out.println(isBalanced("{[}") );
-            System.out.println(isBalanced("]") );
-            System.out.println(isBalanced("") );
+            System.out.println("IsBalanced ({[]}) "+ isBalanced("({[]})"));
+            System.out.println("IsBalanced ([]) " + isBalanced("([])") );
+            System.out.println("IsBalanced ([)] " + isBalanced("([)]"));
+            System.out.println("IsBalanced ((())) " + isBalanced("((()))"));
+            System.out.println("IsBalanced {[} "+ isBalanced("{[}"));
+            System.out.println("isBalanced  ] " + isBalanced("]") );
+            System.out.println("Is Balanced "+ isBalanced("") );
 
             System.out.println("Conversor de decimal a binario");
             int[] numbers = {0, 3, 4, 5, 6, 7, 9, 10, 15, 17, 23, 32, 255, 1023, 1025, 4192, 8586};
