@@ -7,28 +7,37 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArraysStackTest {
 
     @Test
-    void test(){
-
-        ArraysStack arraysStack = new ArraysStack(10);
-
+    void test() {
+        ArraysStack arraysStack = new ArraysStack(11);
         try {
-            for (int i = 0; i < 10; i++) {
-                int value = util.Utility.random(30);
-                System.out.println("Value ["+value+"} pushed");
-                arraysStack.push(value);
-            }
+//            for(int i = 0; i < 10; i++){
+//                int value = util.Utility.random(30);
+//                System.out.println("Value ["+ value+"] pushed");
+//                arraysStack.push(value);
+//            }
+//            System.out.println(arraysStack);
+//
+//            System.out.println(arraysStack);
+
+            //Testeo con los nombres
+            System.out.println("Test for arrayStack with names");
+            arraysStack.push(new Person(1 , "Alanna" , 18));
+            arraysStack.push(new Person(2 , "Pablo" , 20));
+            arraysStack.push(new Person(3 , "Ana" , 21));
+            arraysStack.push(new Person(4 , "Maria" , 20));
+            arraysStack.push(new Person(5 , "Victoria" , 18));
+            arraysStack.push(new Person(6 , "Nicole" , 19));
+            arraysStack.push(new Person(7 , "Mateo" , 18));
+            arraysStack.push(new Person(8 , "Nicole" , 23));
+            arraysStack.push(new Person(9 , "Alana" , 22));
+            arraysStack.push(new Person(10 , "Pablo" , 1));
+            arraysStack.push(new Person(11 , "Ana" , 18));
 
             System.out.println(arraysStack);
-            System.out.println(arraysStack);//llamo de nuevo al toString
 
-
-        } catch (StackException ex) {
+        }catch (StackException ex){
             System.out.println(ex.getMessage());
         }
 
-
-
     }
-
-
 }
