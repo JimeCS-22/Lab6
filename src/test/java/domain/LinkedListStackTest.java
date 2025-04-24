@@ -2,6 +2,7 @@ package domain;
 
 import org.junit.jupiter.api.Test;
 
+import static domain.LinkedListStack.isBalanced;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedListStackTest {
@@ -21,13 +22,21 @@ class LinkedListStackTest {
             System.out.println(linkedStack);
             System.out.println(linkedStack);//llamo de nuevo al toString
 
+            System.out.println("Is Balanced Test:");
+            System.out.println(isBalanced("({[]})"));
+            System.out.println(isBalanced("([])"));
+            System.out.println(isBalanced("([)]"));
+            System.out.println(isBalanced("((()))"));
+            System.out.println(isBalanced("{[}"));
+            System.out.println(isBalanced("]"));
+            System.out.println(isBalanced(""));
 
         } catch (StackException ex) {
             System.out.println(ex.getMessage());
         }
 
 
-
     }
+
 
 }

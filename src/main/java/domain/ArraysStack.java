@@ -25,7 +25,7 @@ public class ArraysStack implements Stack {
 
         if(isEmpty()){
 
-            throw new StackException("Satck List is empty");
+            throw new StackException("Stack List is empty");
 
         }
 
@@ -52,7 +52,7 @@ public class ArraysStack implements Stack {
 
         if(isEmpty()){
 
-            throw new StackException("Satck List is empty");
+            throw new StackException("Stack List is empty");
 
         }
 
