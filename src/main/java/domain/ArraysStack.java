@@ -43,6 +43,8 @@ public class ArraysStack implements Stack {
     @Override
     public boolean isEmpty() {
 
+
+
         return top==-1;
 
     }
@@ -100,29 +102,36 @@ public class ArraysStack implements Stack {
     @Override
     public String toString() {
 
-        if (isEmpty()) return "Array Stack is Empty";
+        if(isEmpty())
+            return "ArraysStack{}";
 
-        String result = "Array Stack Content:\n";
+        String result = "Array Stack Content \n";
 
         try {
 
-            ArraysStack aux= new ArraysStack(size());
+            ArraysStack aux = new ArraysStack(size());
 
             while (!isEmpty()){
 
-                result += peek() + "\n ";
+                result += peek() + " \n";
                 aux.push(pop());
 
+
             }
-            //Deja la pila en su estado original
+
             while (!aux.isEmpty()){
-              push(aux.pop());
+
+                push(aux.pop());
+
             }
 
         } catch (StackException ex) {
+
             System.out.println(ex.getMessage());
         }
 
         return result;
     }
+
+
 }

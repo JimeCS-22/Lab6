@@ -13,18 +13,21 @@ import java.util.Calendar;
 public class Utility {
 
     private static final Random random;
-    private static ArraysStack employeeList;
-    private static LinkedListStack jobPositionList;
-    private static LinkedListStack staffingList;
+    //private static ArraysStack employeeList;
+    //private static LinkedListStack jobPositionList;
+   // private static LinkedListStack staffingList;
 
     //constructor estático, inicializador estático
     static {
         // semilla para el random
         long seed = System.currentTimeMillis();
         random = new Random(seed);
-
+        //employeeList = new ArraysStack();
+        //jobPositionList = new LinkedListStack();
+        //staffingList = new LinkedListStack();
     }
 
+    /*
     public static ArraysStack getEmployeeList() {
         return employeeList;
     }
@@ -48,6 +51,8 @@ public class Utility {
     public static void setStaffingList(LinkedListStack staffingList) {
         Utility.staffingList = staffingList;
     }
+
+     */
 
     // ------------------------------------------------------------- Métodos:
     public static int random(int bound){
@@ -90,7 +95,46 @@ public class Utility {
         return result;
     }
 
+    public static int compare(Object a, Object b) {
+        switch (instanceOf(a,b)){
+            case "Integer":
+                Integer int1 = (Integer)a;
+                Integer int2 = (Integer)b;
+                return int1 < int2 ? -1 :int1 > int2 ? 1 : 0; // ? --> Si es cierto haga... /// : --> Pero si no es cierto entonces haga... Puntos son como el else, ? es como el if
 
+            case "String":
+                String str1 = (String)a;
+                String str2 = (String)b;
+                return str1.compareTo(str2) < 0 ? -1 : str1.compareTo(str2) > 0 ? 1 : 0;
+
+            case "Character":
+                Character ch1 = (Character) a; Character ch2 = (Character) b;
+                return ch1.compareTo(ch2) < 0 ? -1 : ch1.compareTo(ch2) > 0 ? 1 : 0;
+
+           /* case "Employee":
+                Employee emp1 = (Employee) a; Employee emp2 = (Employee) b;
+                return emp1.getId() < emp2.getId() ? -1 :  emp1.getId() > emp2.getId() ? 1 : 0;
+
+            case "JobPosition":
+                JobPosition job1 = (JobPosition) a;
+                JobPosition job2 = (JobPosition) b;
+                return job1.getId() < job2.getId() ? -1 : job1.getId() > job2.getId() ? 1 : 0;
+
+            */
+        }//End switch
+
+        return 2; //Cuando es un caso Unknown
+    }
+
+    public static String instanceOf(Object a, Object b) {
+        if (a instanceof Integer && b instanceof Integer) return "Integer";
+        if (a instanceof String && b instanceof String) return "String";
+        if (a instanceof Character && b instanceof Character) return "Character";
+        //if (a instanceof Employee && b instanceof Employee) return "Employee";
+       // if (a instanceof JobPosition && b instanceof JobPosition) return "JobPosition";
+
+        return "Unknown";
+    }
 
     public static String dateFormat(Date value) {
         return new SimpleDateFormat("dd/MM/yyyy").format(value);
