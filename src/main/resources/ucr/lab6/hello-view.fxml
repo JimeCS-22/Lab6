@@ -9,29 +9,24 @@
 
 <BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HelloController">
    <left>
-      <VBox prefHeight="669.0" prefWidth="217.0" style="-fx-background-color: #0D1824;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="694.0" prefWidth="354.0" style="-fx-background-color: #0D1824;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#Home" prefHeight="62.0" prefWidth="219.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Home" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#Home" prefHeight="62.0" prefWidth="311.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Home" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#employeesView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="219.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Students" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#employeesView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="347.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Base Converter" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#jobPositionView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="219.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Courses" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#jobPositionView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="316.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Arithmetic Converter" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="134.0" mnemonicParsing="false" onAction="#staffingView" prefHeight="62.0" prefWidth="219.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Register" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="30.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onAction="#Exit" prefHeight="62.0" prefWidth="219.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Exit" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onAction="#Exit" prefHeight="62.0" prefWidth="261.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Exit" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
@@ -40,9 +35,9 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane fx:id="ap" prefHeight="769.0" prefWidth="816.0" style="-fx-background-color: #141428;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="ap" prefHeight="694.0" prefWidth="732.0" style="-fx-background-color: #141428;" BorderPane.alignment="CENTER">
          <children>
-            <Text fx:id="txtMessage" fill="#f7f7f7" layoutX="4.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laboratory No. 4" textAlignment="CENTER" wrappingWidth="781.94921875">
+            <Text fx:id="txtMessage" fill="#f7f7f7" layoutX="4.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laboratory No. 6" textAlignment="CENTER" wrappingWidth="781.94921875">
                <font>
                   <Font name="Arial" size="40.0" />
                </font>

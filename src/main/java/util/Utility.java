@@ -2,6 +2,7 @@ package util;
 
 import domain.LinkedListStack;
 import domain.ArraysStack;
+import domain.StackException;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -165,4 +166,120 @@ public class Utility {
 
         return age;
     }
+
+
+
+        public static String prefixToPostfixConverter(String exp) throws StackException  {
+            LinkedListStack stack = new LinkedListStack();
+            int n = exp.length();
+
+
+            for (int i = n - 1; i >= 0; i--) {
+
+                char c = exp.charAt(i);
+
+                //Validation of invalid characters
+                if (!Character.isLetterOrDigit(c) && "+-*/^".indexOf(c) == -1) {
+                    return "Invalid character in expression: " + c;
+                }
+
+                if (Character.isLetterOrDigit(c)) {
+
+                    stack.push(String.valueOf(c));
+
+                } else {
+                    if (stack.size() < 2) {
+                        return "Invalid expression";
+                    }
+                    String operand1 = (String) stack.pop(); // Extract the second operand
+                    String operand2 = (String) stack.pop(); // Extract the first operand
+                    String postfixExpression = operand1 + operand2 + c;
+                    stack.push(postfixExpression);
+                }
+            }
+
+            if (stack.size() != 1) {
+                return "Invalid expression";
+            }
+
+            return (String) stack.pop();
+
+        }
+
+    public static String infixToPostfixConverter(String exp) throws StackException {
+        LinkedListStack stack = new LinkedListStack();
+        String expPostFix = "";
+        for(char c : exp.toCharArray()) {
+            if (Character.isLetterOrDigit(c))
+                expPostFix += c; //lo agregamos a la exp postfija
+            else if (c == '(')
+                stack.push(c);
+            else if (c == ')') {
+                while (!stack.isEmpty() && compare(stack.peek(), '(') != 0)
+                    expPostFix += stack.pop();
+                if (!stack.isEmpty() && compare(stack.top(), '(') != 0)
+                    return "Invalid expression";
+                else if (!stack.isEmpty())
+                    stack.pop();
+            } else { //es un operador
+                while (!stack.isEmpty() && getPriority(c) <= getPriority((char) stack.peek()))
+                    expPostFix += stack.pop();
+                stack.push(c);
+            }
+        }
+        while(!stack.isEmpty())
+            expPostFix+=stack.pop();
+        return expPostFix;
+
+    }
+
+    public static String postfixToInfixConverter(String exp) throws StackException{
+
+        LinkedListStack stack = new LinkedListStack();
+        String expFix = "";
+
+        for (char c : exp.toCharArray()) {
+
+            if (Character.isLetterOrDigit(c)) {
+
+                stack.push(String.valueOf(c));
+                //If it's an operand, we add it to the stack as a String
+            } else {
+                if (stack.size() < 2) {
+
+                    return "Invalid expression"; // Not enough operands
+
+                }
+                String ope2 = (String) stack.pop(); // Extract the second operand
+                String ope1 = (String) stack.pop(); // Extract the first operand
+                String infixExpression = "(" + ope1 + c + ope2 + ")";
+                stack.push(infixExpression);
+            }
+        }
+
+        if (stack.size() != 1) {
+            return "Invalid expression";
+        }
+
+        return (String) stack.pop();
+    }
+
+    private static int getPriority(char operator) {
+
+        switch (operator) {
+            case '+', '-' -> {
+                return 1; //Prioridad más baja
+            }
+            case '*', '/' -> {
+                return 2;
+            }
+            case '^' -> {
+                return 3; //Prioridad más alta
+            }
+        }
+
+        return -1;
+
+    }
+
 }
