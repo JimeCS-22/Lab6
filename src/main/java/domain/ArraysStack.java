@@ -133,5 +133,27 @@ public class ArraysStack implements Stack {
         return result;
     }
 
+    public int getN() {
+        return n;
+    }
 
+    public void setN(int n) {
+        this.n = n;
+    }
+
+    public int getTop() {
+        return top;
+    }
+
+    public void setTop(int top) {
+        this.top = top;
+    }
+
+    public Object[] getDataStack() {
+        return dataStack;
+    }
+
+    public void setDataStack(Object[] dataStack) {
+        this.dataStack = dataStack;
+    }
 }
