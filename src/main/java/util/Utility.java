@@ -274,6 +274,31 @@ public class Utility {
             return (String) stack.pop();
     }
 
+    public static String convertToBase(int decimal, int base) throws StackException {
+        if (decimal == 0) return "0";
+        if (base < 2 || base > 16) return "Base no válida";
+
+        LinkedListStack stack = new LinkedListStack();
+        String digits = "0123456789ABCDEF";
+        int number = decimal;
+
+        // Conversión a la base deseada
+        while (number > 0) {
+            int remainder = number % base;
+            stack.push(Character.valueOf(digits.charAt(remainder)));
+            number = number / base;
+        }
+
+        // Construir resultado
+        String result = "";
+        while (!stack.isEmpty()) {
+            Character c = (Character) stack.pop();
+            result += c.toString();
+        }
+
+        return result;
+    }
+
     private static int getPriority(char operator) {
 
         switch (operator) {

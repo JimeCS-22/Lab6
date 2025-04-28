@@ -48,7 +48,7 @@ public class HelloController {
 
     @FXML
     public void baseView(ActionEvent actionEvent) throws IOException {
-
+        load("base.fxml");
     }
 
     @FXML
