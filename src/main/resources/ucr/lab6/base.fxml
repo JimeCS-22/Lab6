@@ -115,15 +115,15 @@
                                                 <Font size="20.0" />
                                             </font>
                                             <toggleGroup>
-                                                <ToggleGroup fx:id="arithmetic" />
+                                                <ToggleGroup fx:id="baseConvert" />
                                             </toggleGroup>
                                         </RadioButton>
-                                        <RadioButton fx:id="btoctal" mnemonicParsing="false" onAction="#postOnAction" prefHeight="18.0" prefWidth="237.0" text="Octal" textFill="WHITE" toggleGroup="$arithmetic">
+                                        <RadioButton fx:id="btoctal" mnemonicParsing="false" onAction="#octalOnAction" prefHeight="18.0" prefWidth="237.0" text="Octal" textFill="WHITE" toggleGroup="$baseConvert">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
                                         </RadioButton>
-                                        <RadioButton fx:id="bthexadecimal" minWidth="165.0" mnemonicParsing="false" onAction="#infOnAction" prefHeight="30.0" text="Hexadecimal" textFill="WHITE" toggleGroup="$arithmetic">
+                                        <RadioButton fx:id="bthexadecimal" minWidth="165.0" mnemonicParsing="false" onAction="#hexadecimalOnAction" prefHeight="30.0" text="Hexadecimal" textFill="WHITE" toggleGroup="$baseConvert">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>

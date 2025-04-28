@@ -30,7 +30,8 @@ public class baseController {
     private AnchorPane AP;
     @javafx.fxml.FXML
     private Label changeL1;
-
+    @javafx.fxml.FXML
+    private ToggleGroup baseConvert;
 
 
     @javafx.fxml.FXML
@@ -59,7 +60,7 @@ public class baseController {
     }
 
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void hexadecimalOnAction(ActionEvent actionEvent) {
 
         changeL1.setText("Result:");
@@ -68,7 +69,7 @@ public class baseController {
 
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void octalOnAction(ActionEvent actionEvent) {
 
         changeL1.setText("Result:");
@@ -98,7 +99,7 @@ public class baseController {
             int decimalValue;
             try {
                 decimalValue = Integer.parseInt(inputText);
-                if (decimalValue < 0) { // Si tu conversor no soporta negativos
+                if (decimalValue < 0) {
                     util.FXUtility.showAlert("Error", "Please enter a positive number", Alert.AlertType.ERROR);
                     return;
                 }
@@ -135,7 +136,7 @@ public class baseController {
             }
 
             try {
-                // Solo permitir dígitos (y opcionalmente negativo si lo soporta tu conversor)
+                // Solo permitir dígitos
                 if (newText.matches("-?\\d*")) {
                     return change;
                 }
@@ -146,13 +147,5 @@ public class baseController {
         };
 
         return new TextFormatter<>(filter);
-    }
-
-    @javafx.fxml.FXML
-    public void postOnAction(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void infOnAction(ActionEvent actionEvent) {
     }
 }
