@@ -3,7 +3,6 @@ package util;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
@@ -60,7 +59,7 @@ public class FXUtility {
         alert.showAndWait();
     }
 
-    public static void showAlert(String title, String message) {
+    public static void showAlert(String title, String message, Alert.AlertType information) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null); // Sin encabezado

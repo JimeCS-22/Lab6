@@ -22,7 +22,7 @@ public class HelloController {
     private AnchorPane ap;
 
 
-    @FXML
+    @Deprecated
     private void load(String form) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(form));
         this.bp.setCenter(fxmlLoader.load());
@@ -31,45 +31,28 @@ public class HelloController {
     @FXML
     public void Home(ActionEvent actionEvent) {
         this.bp.setCenter(ap);
-        this.txtMessage.setText("Laboratory No. 5");
+        this.txtMessage.setText("Laboratory No. 6");
     }
 
-    @FXML
-    public void employeesView(ActionEvent actionEvent) {
-        try {
-            load("employees-view.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    public void jobPositionView(ActionEvent actionEvent) {
-        try {
-            load("jobPosition-view.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    public void staffingView(ActionEvent actionEvent) {
-        try {
-            load("staff-view.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     public void Exit(ActionEvent actionEvent) {
         System.exit(0);
     }
 
-    @Deprecated
+    @FXML
     public void loadingOnMousePressed(Event event)  {
         this.txtMessage.setText("Estamos cargando tu vista...");
     }
 
 
+    @FXML
+    public void baseView(ActionEvent actionEvent) throws IOException {
+
+    }
+
+    @FXML
+    public void converterView(ActionEvent actionEvent) throws IOException {
+        load("converter.fxml");
+    }
 }

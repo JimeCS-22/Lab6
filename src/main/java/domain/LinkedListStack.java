@@ -3,7 +3,7 @@ package domain;
 public class LinkedListStack implements Stack {
 
     private Node top;
-    private int counter ;
+    private int counter;
 
     public LinkedListStack() {
 
@@ -15,9 +15,9 @@ public class LinkedListStack implements Stack {
     @Override
     public int size() throws StackException {
 
-        if(isEmpty()){
+        if (isEmpty()) {
 
-            throw new StackException("Satck List is empty");
+            throw new StackException("Stack List is empty");
 
         }
 
@@ -36,7 +36,7 @@ public class LinkedListStack implements Stack {
     @Override
     public boolean isEmpty() {
 
-        return top==null;
+        return top == null;
 
     }
 
@@ -57,7 +57,7 @@ public class LinkedListStack implements Stack {
 
         Node newNode = new Node(element);
 
-        if(!isEmpty()) newNode.next = top;
+        if (!isEmpty()) newNode.next = top;
 
         top = newNode;
         counter++;
@@ -67,13 +67,13 @@ public class LinkedListStack implements Stack {
     @Override
     public Object pop() throws StackException {
 
-        if(isEmpty()){
+        if (isEmpty()) {
 
-            throw new StackException("Satck List is empty");
+            throw new StackException("Stack List is empty");
 
         }
 
-        Object result ;
+        Object result;
         result = top.data;
 
         top = top.next;
@@ -107,6 +107,10 @@ public class LinkedListStack implements Stack {
                 (abre == '[' && cierra == ']');
     }
 
+
+
+
+
     @Override
     public String toString() {
 
@@ -116,9 +120,9 @@ public class LinkedListStack implements Stack {
 
         try {
 
-            LinkedListStack aux= new LinkedListStack();
+            LinkedListStack aux = new LinkedListStack();
 
-            while (!isEmpty()){
+            while (!isEmpty()) {
 
                 result += peek() + "\n ";
                 aux.push(pop());
@@ -126,7 +130,7 @@ public class LinkedListStack implements Stack {
             }
 
             //Deja la pila en su estado original
-            while (!aux.isEmpty()){
+            while (!aux.isEmpty()) {
                 push(aux.pop());
             }
 
@@ -136,5 +140,6 @@ public class LinkedListStack implements Stack {
 
         return result;
     }
-    
+
 }
+
