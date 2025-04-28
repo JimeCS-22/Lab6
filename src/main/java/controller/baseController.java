@@ -30,8 +30,7 @@ public class baseController {
     private AnchorPane AP;
     @javafx.fxml.FXML
     private Label changeL1;
-    @javafx.fxml.FXML
-    private ToggleGroup arithmetic;
+
 
 
     @javafx.fxml.FXML
@@ -55,7 +54,6 @@ public class baseController {
 
         changeL1.setText("Result:");
 
-        // ExpressionTextfield.clear();
         ResultTextfield.clear();
 
     }
@@ -66,7 +64,6 @@ public class baseController {
 
         changeL1.setText("Result:");
 
-        //DecimalValueTextfield.clear();
         ResultTextfield.clear();
 
     }
@@ -76,7 +73,6 @@ public class baseController {
 
         changeL1.setText("Result:");
 
-        //DecimalValueTextfield.clear();
         ResultTextfield.clear();
 
     }
