@@ -244,6 +244,7 @@ public class Utility {
         LinkedListStack stack = new LinkedListStack();
         String expFix = "";
 
+
         for (char c : exp.toCharArray()) {
 
             //Validation of invalid characters
@@ -273,6 +274,8 @@ public class Utility {
         } else
             return (String) stack.pop();
     }
+
+
 
     public static String convertToBase(int decimal, int base) throws StackException {
         if (decimal == 0) return "0";
@@ -315,5 +318,107 @@ public class Utility {
 
         return -1;
 
+
     }
+
+
+    public static int evaluateInfix(String infixExpression) throws StackException {
+        LinkedListStack operands = new LinkedListStack();  // Pila para operandos
+        LinkedListStack operators = new LinkedListStack();  // Pila para operadores
+
+        for (int i = 0; i < infixExpression.length(); i++) {
+            char c = infixExpression.charAt(i);
+
+            if (c == ' ') continue; //Para ignorar los espacios en blanco
+
+            //Si es dígito se agrega a la pila de operando
+            if (Character.isDigit(c)) {
+                operands.push(c - '0');
+            }
+            else if (c == '(') {
+                operators.push(c);
+            }
+            else if (c == ')') {
+                while (!operators.isEmpty() && ((Character) operators.peek() != '(')) {
+                    char operator = (char) operators.pop();
+                    int operand2 = (int) operands.pop();
+                    int operand1 = (int) operands.pop();
+                    int result = calculate(operator, operand1, operand2);
+                    operands.push(result);
+                }
+                operators.pop();
+            }
+
+            else if (isOperator(c)) {
+                while (!operators.isEmpty() && hasPrecedence(c, (Character) operators.peek())) {
+                    char operator = (char) operators.pop();
+                    int operand2 = (int) operands.pop();
+                    int operand1 = (int) operands.pop();
+                    int result = calculate(operator, operand1, operand2);
+                    operands.push(result);
+                }
+                operators.push(c);
+            }
+        }
+
+        while (!operators.isEmpty()) {
+            char operator = (char) operators.pop();
+            int operand2 = (int) operands.pop();
+            int operand1 = (int) operands.pop();
+            int result = calculate(operator, operand1, operand2);
+            operands.push(result);
+        }
+
+
+        return (int) operands.pop();
+    }
+
+    private static int calculate(char operator, int operand1, int operand2) {
+        switch (operator) {
+            case '+':
+                return operand1 + operand2;
+            case '-':
+                return operand1 - operand2;
+            case '*':
+                return operand1 * operand2;
+            case '/':
+                if (operand2 == 0) {
+                    throw new ArithmeticException("División por cero");
+                }
+                return operand1 / operand2;
+            case '^':
+                return (int) Math.pow(operand1, operand2);
+            default:
+                throw new IllegalArgumentException("Operador inválido");
+        }
+    }
+
+
+
+    private static boolean hasPrecedence(char operator1, char operator2) {
+        if (operator2 == '(' || operator2 == ')') {
+            return false;
+        }
+        if ((operator1 == '*' || operator1 == '/') && (operator2 == '+' || operator2 == '-')) {
+            return false;
+        }
+        return true;
+    }
+
+
+    private static boolean isOperator(char c) {
+        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
+    }
+
+    private static int getPrecedence(char operator) {
+        switch (operator) {
+            case '+': case '-': return 1; // Precedencia más baja
+            case '*': case '/': return 2;
+            case '^': return 3; // Precedencia más alta
+        }
+        return -1; // En caso de un operador no reconocido
+
+
+    }
+
 }

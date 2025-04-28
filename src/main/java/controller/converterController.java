@@ -32,9 +32,9 @@ public class converterController {
     @javafx.fxml.FXML
     private AnchorPane AP;
     @javafx.fxml.FXML
-    private Label changeL1;
+    private Label changeL1;//Primer label de las respuestas
     @javafx.fxml.FXML
-    private Label changeL2;
+    private Label changeL2;//Segundo label de las respuestas
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -95,30 +95,27 @@ public class converterController {
     @javafx.fxml.FXML
     public void converterOnAction(ActionEvent actionEvent) throws StackException {
 
+        String expression = ExpressionTextfield.getText();
+
+        if (expression == "")
+
+            util.FXUtility.showAlert("Information", "There is no expression wrote", Alert.AlertType.INFORMATION);
+
         if (btprefix.isSelected()) {
 
-            if (ExpressionTextfield.getText() == "")
-                util.FXUtility.showAlert("Information", "There is no expression wrote", Alert.AlertType.INFORMATION);
-
-            PostfixTextfield.setText(util.Utility.prefixToPostfixConverter(ExpressionTextfield.getText()));
+            PostfixTextfield.setText(util.Utility.prefixToPostfixConverter(expression));
             InfixTextfield.setText(util.Utility.postfixToInfixConverter(PostfixTextfield.getText()));
 
 
         } else if (btinfix.isSelected()) {
 
-            if (ExpressionTextfield.getText() == "")
-                util.FXUtility.showAlert("Information", "There is no expression wrote", Alert.AlertType.INFORMATION);
-
-            InfixTextfield.setText(util.Utility.infixToPrefixConverter(ExpressionTextfield.getText()));
+            InfixTextfield.setText(util.Utility.infixToPrefixConverter(expression));
             PostfixTextfield.setText(util.Utility.prefixToPostfixConverter(InfixTextfield.getText()));
 
 
         } else if (btpostfix.isSelected()) {
 
-            if (ExpressionTextfield.getText() == "")
-                util.FXUtility.showAlert("Information", "There is no expression wrote", Alert.AlertType.INFORMATION);
-
-            PostfixTextfield.setText(util.Utility.postfixToInfixConverter(ExpressionTextfield.getText()));
+            PostfixTextfield.setText(util.Utility.postfixToInfixConverter(expression));
             InfixTextfield.setText(util.Utility.infixToPrefixConverter(PostfixTextfield.getText()));
 
         } else {
