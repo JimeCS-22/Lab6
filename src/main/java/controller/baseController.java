@@ -110,18 +110,18 @@ public class baseController {
 
             // Realizar conversión
             String result;
-            try {
-                if (btbinary.isSelected()) {
-                    result = util.Utility.convertToBase(decimalValue, 2);
-                } else if (bthexadecimal.isSelected()) {
-                    result = util.Utility.convertToBase(decimalValue, 16);
-                } else {
-                    result = util.Utility.convertToBase(decimalValue, 8);
-                }
-                ResultTextfield.setText(result);
-            } catch (StackException e) {
-                util.FXUtility.showAlert("Conversion Error", e.getMessage(), Alert.AlertType.ERROR);
-            }
+//            try {
+//                if (btbinary.isSelected()) {
+//                    result = util.Utility.convertToBase(decimalValue, 2);
+//                } else if (bthexadecimal.isSelected()) {
+//                    result = util.Utility.convertToBase(decimalValue, 16);
+//                } else {
+//                    result = util.Utility.convertToBase(decimalValue, 8);
+//                }
+//                ResultTextfield.setText(result);
+//            } catch (StackException e) {
+//                util.FXUtility.showAlert("Conversion Error", e.getMessage(), Alert.AlertType.ERROR);
+//            }
 
         } catch (Exception e) {
             util.FXUtility.showAlert("Error", "An unexpected error occurred", Alert.AlertType.ERROR);

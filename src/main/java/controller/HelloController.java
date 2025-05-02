@@ -52,6 +52,6 @@ public class HelloController {
 
     @FXML
     public void converterView(ActionEvent actionEvent) throws IOException {
-        load("converter.fxml");
+        load("weather.fxml");
     }
 }
