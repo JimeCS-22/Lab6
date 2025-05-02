@@ -1,4 +1,4 @@
-package ucr.lab6;
+package ucr.lab7;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

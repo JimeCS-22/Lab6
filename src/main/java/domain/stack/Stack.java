@@ -1,4 +1,4 @@
-package domain;
+package domain.stack;
 
 public interface Stack {
 

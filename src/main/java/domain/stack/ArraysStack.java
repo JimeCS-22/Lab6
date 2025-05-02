@@ -1,6 +1,4 @@
-package domain;
-
-import java.util.Arrays;
+package domain.stack;
 
 public class ArraysStack implements Stack {
 

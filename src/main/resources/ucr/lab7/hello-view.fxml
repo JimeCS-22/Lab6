@@ -16,12 +16,12 @@
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#baseView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="347.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Base Converter" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#baseView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="347.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Priority Queue" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#converterView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="317.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Arithmetic Converter" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#converterView" onMousePressed="#loadingOnMousePressed" prefHeight="62.0" prefWidth="317.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Queue to stack" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
@@ -37,7 +37,7 @@
    <center>
       <AnchorPane fx:id="ap" prefHeight="694.0" prefWidth="732.0" style="-fx-background-color: #141428;" BorderPane.alignment="CENTER">
          <children>
-            <Text fx:id="txtMessage" fill="#f7f7f7" layoutX="4.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laboratory No. 6" textAlignment="CENTER" wrappingWidth="781.94921875">
+            <Text fx:id="txtMessage" fill="#f7f7f7" layoutX="4.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laboratory No. 7" textAlignment="CENTER" wrappingWidth="781.94921875">
                <font>
                   <Font name="Arial" size="40.0" />
                </font>

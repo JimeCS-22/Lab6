@@ -1,6 +1,6 @@
 package controller;
 
-import domain.StackException;
+import domain.stack.StackException;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;

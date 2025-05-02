@@ -1,9 +1,10 @@
 package domain;
 
+import domain.stack.LinkedListStack;
+import domain.stack.StackException;
 import org.junit.jupiter.api.Test;
 
-import static domain.LinkedListStack.isBalanced;
-import static org.junit.jupiter.api.Assertions.*;
+import static domain.stack.LinkedListStack.isBalanced;
 
 class LinkedListStackTest {
 

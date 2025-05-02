@@ -1,5 +1,8 @@
 package domain;
 
+import domain.stack.ArraysStack;
+import domain.stack.Person;
+import domain.stack.StackException;
 import org.junit.jupiter.api.Test;
 
 class ArraysStackTest {
