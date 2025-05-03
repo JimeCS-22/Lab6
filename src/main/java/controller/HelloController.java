@@ -30,7 +30,7 @@ public class HelloController {
     @FXML
     public void Home(ActionEvent actionEvent) {
         this.bp.setCenter(ap);
-        this.txtMessage.setText("Laboratory No. 6");
+        this.txtMessage.setText("Laboratory No. 7");
     }
 
 
@@ -46,12 +46,12 @@ public class HelloController {
 
 
     @FXML
-    public void baseView(ActionEvent actionEvent) throws IOException {
-        load("base.fxml");
+    public void priorityQueue(ActionEvent actionEvent) throws IOException {
+        load("priorityQueue.fxml");
     }
 
     @FXML
-    public void converterView(ActionEvent actionEvent) throws IOException {
+    public void queueStack(ActionEvent actionEvent) throws IOException {
         load("weather.fxml");
     }
 }

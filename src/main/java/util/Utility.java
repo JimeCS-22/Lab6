@@ -291,4 +291,39 @@ public class Utility {
         return -1;
 
     }
+
+    public static String getMoods (){
+
+        String moods [] = { "Happiness", "Sadness", "Anger", "Sickness", "Cheerful", "Reflective",
+                "Gloomy", "Romantic", "Calm", "Hopeful", "Fearful", "Tense", "Lonely"};
+
+        return moods[random(moods.length)-1];
+    }
+
+    public static String getNames(){
+
+        String names [] = {"Sofia" , "Mateo" , "Valentina" , "Santiago" , "Isabella" , "Benjamín" , "Camila" ,
+                "Leonardo" , "Antonella " , "Thiago" , "Martina" , "Lucas " , "Emilia " , "Diego" , "Luciana " ,
+                "Joaquín " , "Renata" , "Tomás" , "Zoe" , "Nicolás "};
+
+        return names[random(names.length)-1];
+    }
+
+    public static String getPlace() {
+
+        String places[] = {"San José", "Ciudad Quesada", "Paraíso",
+                "Turrialba", "Limón", "Liberia", "Puntarenas", "San Ramón", "Puerto Viejo", "Volcán Irazú", "Pérez Zeledón",
+                "Palmares", "Orotina", "El coco", "Ciudad Neilly", "Sixaola", "Guápiles","Siquirres"
+                , "El Guarco", "Cartago", "Santa Bárbara", "Jacó", "Manuel Antonio", "Quepos", "Santa Cruz",
+                "Nicoya"};
+
+        return places[random(places.length-1)];
+    }
+
+    public static String getWeather() {
+
+        String weather[] = {"rainy, thunderstorm, sunny, cloudy, foggy"};
+
+        return weather[random(weather.length)-1];
+    }
 }

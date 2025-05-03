@@ -6,8 +6,9 @@ module ucr.lab7 {
     opens ucr.lab7 to javafx.fxml;
     exports ucr.lab7;
     exports controller;
+    exports domain.queue.Domain;
     opens controller to javafx.fxml;
-
+    opens domain.queue.Domain to javafx.base;
     opens domain.stack to javafx.base;
 
 

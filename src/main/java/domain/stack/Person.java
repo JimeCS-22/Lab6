@@ -1,23 +1,17 @@
 package domain.stack;
 
+import java.util.Objects;
+
 public class Person {
 
-    private int id;
     private String name;
-    private int age;
+    private String mood;
+    private int attentionTime;//expresado en milesegundos
 
-    public Person(int id, String name, int age) {
-        this.id = id;
+    public Person(String name, String mood, int attentionTime) {
         this.name = name;
-        this.age = age;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.mood = mood;
+        this.attentionTime = attentionTime;
     }
 
     public String getName() {
@@ -28,20 +22,28 @@ public class Person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getMood() {
+        return mood;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setMood(String mood) {
+        this.mood = mood;
+    }
+
+    public int getAttentionTime() {
+        return attentionTime;
+    }
+
+    public void setAttentionTime(int attentionTime) {
+        this.attentionTime = attentionTime;
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
+                " " + name + '\'' +
+                ", " + mood + '\'' +
+                ", " + attentionTime +
                 '}';
     }
 }

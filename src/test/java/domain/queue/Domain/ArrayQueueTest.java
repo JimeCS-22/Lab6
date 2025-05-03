@@ -1,6 +1,9 @@
 package domain.queue.Domain;
 
+import domain.stack.StackException;
+import domain.stack.Person;
 import org.junit.jupiter.api.Test;
+import util.Utility;
 
 class ArrayQueueTest {
 
@@ -13,7 +16,7 @@ class ArrayQueueTest {
             //Encolar a los 20 objetos y mostrarlos
             for (int i = 0; i < 20; i++) {
 
-                arrayQueue.enQueue(new Person(util.Utility.getNames() ,util.Utility.getMoods() , util.Utility.random(100) ));
+                arrayQueue.enQueue(new Person(util.Utility.getNames() ,util.Utility.getMoods() , util.Utility.random(100)));
 
             }//for
 
@@ -29,7 +32,7 @@ class ArrayQueueTest {
 
             for (int i = 0; i < 5; i++) {
 
-                Person randomPerson = new Person(util.Utility.getNames() ,util.Utility.getMoods() , util.Utility.random(100) );
+                Person randomPerson = new Person(Utility.getNames(), Utility.getMoods(), Utility.random(100));
                 System.out.println("Looking for: " + randomPerson);
 
                 //Comprobar si la persona esta o no
@@ -70,6 +73,8 @@ class ArrayQueueTest {
             System.out.println(arrayQueue);
 
         } catch (QueueException e) {
+            throw new RuntimeException(e);
+        } catch (StackException e) {
             throw new RuntimeException(e);
         }
     }
